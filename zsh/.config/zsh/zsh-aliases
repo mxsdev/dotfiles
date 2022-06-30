@@ -1,0 +1,8 @@
+alias python=python3
+
+alias cls='printf "\033c"'
+
+alias ls='ls -G'
+
+alias nvimrc='nvim ~/.config/nvim/'
+alias zshrc='nvim ~/.config/zsh/'
