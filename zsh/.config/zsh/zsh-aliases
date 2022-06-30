@@ -6,3 +6,6 @@ alias ls='ls -G'
 
 alias nvimrc='nvim ~/.config/nvim/'
 alias zshrc='nvim ~/.config/zsh/'
+
+alias nv='nvim'
+alias lg='lazygit'
