@@ -2,7 +2,7 @@
 
 All my dotfiles :)
 
-# Installing
+## Installing
 
 Designed to be installable with stow:
 
@@ -10,7 +10,7 @@ Designed to be installable with stow:
 stow */
 ```
 
-# Nvim
+## Nvim
 
 This is essentially a fork of [LunarVim](https://www.lunarvim.org/), with emphasis on tooling for typescript as most of my current projects are in it.
 
