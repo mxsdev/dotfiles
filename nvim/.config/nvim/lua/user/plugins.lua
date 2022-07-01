@@ -91,6 +91,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "nvim-treesitter/playground"
 
   -- Colors --
   use 'phanviet/vim-monokai-pro'

@@ -106,7 +106,7 @@ local M = {
     },
   },
   xmappings = {
-    r = {
+    R = {
       name = "Refactor",
       e = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], "Extract Function" },
       f = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], "Extract Function to File" },
@@ -115,7 +115,7 @@ local M = {
     },
   },
   mappings = {
-    r = {
+    R = {
       name = "Refactor",
       b = { [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], "Extract Block" },
       B = { [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]], "Extract Block to File" },
@@ -316,7 +316,17 @@ local M = {
     T = {
       name = "Treesitter",
       i = { ":TSConfigInfo<cr>", "Info" },
+      p = { ":TSPlaygroundToggle<cr>", "Playground" },
     },
+    r = {
+      name = "React",
+      s = { ":lua require('user.utils.react').select_closest_parent(false)<cr>", "Select Component"},
+      i = { ":lua require('user.utils.react').select_closest_parent(true)<cr>", "Select Inner"},
+      I = { ":lua require('user.utils.react').select_closest_parent(true, 2)<cr>", "Select Parental Inner"},
+      S = { ":lua require('user.utils.react').select_closest_parent(false, 2)<cr>", "Select Parent"},
+      c = { ":lua require('user.utils.react').toggle_react_comment(1)<cr>", "Comment Component"},
+      C = { ":lua require('user.utils.react').toggle_react_comment(2)<cr>", "Comment Parent"}
+    }
   },
 }
 
