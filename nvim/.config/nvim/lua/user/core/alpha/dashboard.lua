@@ -33,7 +33,7 @@ function M.get_sections()
       { "n", "  New File", "<CMD>ene!<CR>" },
       { "p", "  Recent Projects ", "<CMD>Telescope projects<CR>" },
       { "r", "  Recently Used Files", "<CMD>Telescope oldfiles<CR>" },
-      { "R", "  Most Recent File", "r<CR>"},
+      { "R", "  Most Recent File", "<CMD>lua require('user.utils.history').open_recent_file()<CR>"},
       { "t", "  Find Word", "<CMD>Telescope live_grep<CR>" },
       {
         "c",

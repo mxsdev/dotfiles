@@ -250,6 +250,7 @@ local M = {
       -- },
       D = { "<cmd>lua require('user.debug')()<cr>", "Run debug"},
       f = { "<CMD>Telescope oldfiles<CR>", "Recent Files" },
+      F = { "<CMD>lua require('user.utils.history').open_recent_file()<CR>", "Open Recent File" },
       -- f = {
       --   "<cmd>lua require('lvim.core.telescope.custom-finders').find_lunarvim_files()<cr>",
       --   "Find LunarVim files",
