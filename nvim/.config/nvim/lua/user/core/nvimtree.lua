@@ -1,5 +1,6 @@
 local M = {}
 local Log = require "user.log"
+local AU = require"user.core.autocmds"
 
 function M.config()
   userconf.builtin.nvimtree = {
@@ -60,8 +61,8 @@ function M.config()
           custom_only = false,
           list = {},
         },
-        number = false,
-        relativenumber = false,
+        number = true,
+        relativenumber = true,
         signcolumn = "yes",
       },
       renderer = {
@@ -200,6 +201,24 @@ function M.setup()
   if userconf.builtin.nvimtree.on_config_done then
     userconf.builtin.nvimtree.on_config_done(nvim_tree)
   end
+
+  local resize = function(winnr, bufnr)
+    local w = require("user.utils.buffer").buffer_max_line(bufnr)
+    vim.api.nvim_win_set_width(winnr, w + 5)
+  end
+
+  local view = require("nvim-tree.view")
+
+  require("nvim-tree.events").on_tree_open(function ()
+    local winnr = view.get_winnr()
+    local bufnr = view.get_bufnr()
+
+    vim.api.nvim_buf_attach(bufnr, true, {
+      on_lines = function(lines)
+        resize(winnr, bufnr)
+      end
+    })
+  end)
 end
 
 function M.start_telescope(telescope_mode)

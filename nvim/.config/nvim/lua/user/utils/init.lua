@@ -117,4 +117,8 @@ function M.dump(o)
    end
 end
 
+function M.setup()
+  require("user.utils.buffer").setup()
+end
+
 return M

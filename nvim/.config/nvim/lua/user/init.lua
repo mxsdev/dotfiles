@@ -1,4 +1,7 @@
+require('impatient').enable_profile()
+
 require("user.config"):init()
+require("user.utils").setup()
 
 require"user.plugins"
 require"user.colorscheme"

@@ -248,10 +248,12 @@ local M = {
       --   "<cmd>edit " .. get_config_dir() .. "/config.lua<cr>",
       --   "Edit config.lua",
       -- },
-      f = {
-        "<cmd>lua require('lvim.core.telescope.custom-finders').find_lunarvim_files()<cr>",
-        "Find LunarVim files",
-      },
+      D = { "<cmd>lua require('user.debug')()<cr>", "Run debug"},
+      f = { "<CMD>Telescope oldfiles<CR>", "Recent Files" },
+      -- f = {
+      --   "<cmd>lua require('lvim.core.telescope.custom-finders').find_lunarvim_files()<cr>",
+      --   "Find LunarVim files",
+      -- },
       g = {
         "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>",
         "Grep LunarVim files",

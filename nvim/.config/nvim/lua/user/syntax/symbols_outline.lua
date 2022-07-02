@@ -6,6 +6,8 @@ M.setup = function ()
     autofold_depth = 1,
     auto_unfold_hover = true,
     only_reload_on_change = true,
+    show_numbers = true,
+    show_relative_numbers = true,
   }
 end
 

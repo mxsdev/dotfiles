@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
 
   -- Core Plugins --
+  use 'lewis6991/impatient.nvim'
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use "kyazdani42/nvim-tree.lua"
