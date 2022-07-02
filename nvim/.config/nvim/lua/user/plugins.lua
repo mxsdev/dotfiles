@@ -48,7 +48,8 @@ return packer.startup(function(use)
 
   -- Core Plugins --
   use 'lewis6991/impatient.nvim'
-  use "windwp/nvim-autopairs"
+  -- use "windwp/nvim-autopairs"
+  use(join_paths(get_config_dir(), "forked/nvim-autopairs"))
   use "numToStr/Comment.nvim"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/toggleterm.nvim"
@@ -68,6 +69,7 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
   use "goolord/alpha-nvim"
   use "windwp/nvim-ts-autotag"
+  use "tpope/vim-surround"
   
   -- CMP Plugins --
   use "hrsh7th/nvim-cmp"

@@ -29,7 +29,7 @@ end
 ---Generates an ftplugin file based on the server_name in the selected directory
 ---@param server_name string name of a valid language server, e.g. pyright, gopls, tsserver, etc.
 ---@param dir string the full path to the desired directory
-function M.generate_ftplugin(server_name, dir)
+function M.generate_ftplugin(server_name, dir, res)
   if should_skip(server_name) then
     return
   end
@@ -44,11 +44,12 @@ function M.generate_ftplugin(server_name, dir)
   end
 
   for _, filetype in ipairs(filetypes) do
-    local filename = join_paths(dir, filetype .. ".lua")
-    local setup_cmd = string.format([[require("user.lsp.manager").setup(%q)]], server_name)
-    -- print("using setup_cmd: " .. setup_cmd)
-    -- overwrite the file completely
-    utils.write_file(filename, setup_cmd .. "\n", "a")
+    if not res[filetype] then
+      res[filetype] = { }
+    end
+
+    -- table.insert()
+    table.insert(res[filetype], server_name)
   end
 end
 
@@ -76,9 +77,26 @@ function M.generate_templates(servers_names)
     vim.fn.mkdir(ftplugin_dir, "p")
   end
 
+  local res = { }
+
   for _, server in ipairs(servers_names) do
-    M.generate_ftplugin(server, ftplugin_dir)
+    M.generate_ftplugin(server, ftplugin_dir, res)
   end
+
+  for filetype, server_names in pairs(res) do
+    local filename = join_paths(ftplugin_dir, filetype .. ".lua")
+    -- local setup_cmd = string.format([[require("user.lsp.manager").setup(%q)]], server_name)
+
+    local commands = vim.tbl_map(function (server_name)
+      return string.format([[require("user.lsp.manager").setup(%q)]], server_name)
+    end, server_names)
+
+    local file_data = table.concat(commands, "\n") 
+
+    utils.write_file(filename, file_data .. "\n", "a")
+  end
+
+
   Log:debug "Templates installation is complete"
 end
 

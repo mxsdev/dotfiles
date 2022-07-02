@@ -1,5 +1,6 @@
 local M = {}
 local tbl = require "user.utils.table"
+local lsp_config = require "user.lsp.config"
 
 function M.is_client_active(name)
   local clients = vim.lsp.get_active_clients()
@@ -52,6 +53,12 @@ end
 ---@param server_name string can be any server supported by nvim-lsp-installer
 ---@return table supported filestypes as a list of strings
 function M.get_supported_filetypes(server_name)
+  local config_filetypes = lsp_config.server_filetypes[server_name] 
+
+  if config_filetypes then
+    return config_filetypes
+  end
+
   local status_ok, lsp_installer_servers = pcall(require, "nvim-lsp-installer.servers")
   if not status_ok then
     return {}
@@ -62,7 +69,9 @@ function M.get_supported_filetypes(server_name)
     return {}
   end
 
-  return requested_server:get_supported_filetypes()
+  local installer_filetypes = requested_server:get_supported_filetypes()
+
+  return installer_filetypes
 end
 
 ---Get supported servers per filetype

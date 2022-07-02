@@ -7,7 +7,7 @@ local skipped_servers = {
   -- "cssmodules_ls",
   "denols",
   "ember",
-  "emmet_ls",
+  -- "emmet_ls",
   "eslint",
   "eslintls",
   "golangci_lint_ls",
@@ -97,6 +97,9 @@ return {
     ---@usage list of filetypes that the automatic installer will skip
     skipped_filetypes = skipped_filetypes,
   },
+  server_filetypes = {
+    emmet_ls = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' }
+  },
   buffer_mappings = {
     normal_mode = {
       ["K"] = { vim.lsp.buf.hover, "Show hover" },
@@ -105,7 +108,7 @@ return {
       ["gr"] = { vim.lsp.buf.references, "Goto references" },
       ["gI"] = { vim.lsp.buf.implementation, "Goto Implementation" },
       ["gs"] = { vim.lsp.buf.signature_help, "show signature help" },
-      ["gp"] = {
+      ["gf"] = {
         function()
           require("user.lsp.peek").Peek "definition"
         end,

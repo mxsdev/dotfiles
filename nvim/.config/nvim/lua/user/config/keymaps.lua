@@ -50,6 +50,10 @@ local defaults = {
     ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
     -- Move current line / block with Alt-j/k ala vscode.
     ["<A-k>"] = "<Esc>:m .-2<CR>==gi",
+
+    -- Space in front
+    ["<S-Space>"] = " <Left>",
+
     -- navigation
     ["<A-Up>"] = "<C-\\><C-N><C-w>k",
     ["<A-Down>"] = "<C-\\><C-N><C-w>j",
@@ -73,9 +77,19 @@ local defaults = {
     -- Lightspeed
     ["<C-s>"] = "<C-o><Plug>Lightspeed_s",
     ["<C-S>"] = "<C-o><Plug>Lightspeed_S",
+
+    -- Delete word
+    ["<A-Backspace>"] = "<Esc><Right>dbi",
+    ["<C-Backspace>"] = "<Esc><Right>dbi",
   },
 
   normal_mode = {
+    -- Easier indent
+    [">"] = ">>",
+    ["<"] = "<<",
+    -- Delete line without copying
+    ["<S-D>"] = '"_dd<Esc>',
+    
     -- Better window movement
     ["<C-h>"] = "<C-w>h",
     ["<C-j>"] = "<C-w>j",
@@ -114,7 +128,9 @@ local defaults = {
     ["vd"] = { tsurfer.swapDownCurrent, { expr = true}},
     ["vu"] = { tsurfer.swapUpCurrent, {expr = true}},
     ["vx"] = "<cmd>STSSelectMasterNode<cr>",
-    ["vn"] = "<cmd>STSSelectCurrentNode<cr>"
+    ["vn"] = "<cmd>STSSelectCurrentNode<cr>",
+    ["<A-l>"] = "v<cmd>STSSelectNextSiblingNode<cr>o<esc>",
+    ["<A-h>"] = "v<cmd>STSSelectPrevSiblingNode<cr>o<esc>"
   },
 
   term_mode = {
@@ -132,6 +148,8 @@ local defaults = {
 
     -- ["p"] = '"0p',
     -- ["P"] = '"0P',
+
+
   },
 
   visual_block_mode = {
@@ -172,11 +190,28 @@ local defaults = {
 --   pcall(vim.keymap.del, mode_adapters[mode], "<leader>")
 -- end
 
+-- test test test abc abc abc
+
 local tsht_nodes_cmd = "lua require('tsht').nodes()<CR>"
 local tsht_nodes_key = "m"
 
 for _, mode in pairs({ "normal_mode", "visual_mode" }) do
-  defaults[mode][tsht_nodes_key] = { ":" .. tsht_nodes_cmd, { noremap = true } }
+  defaults[mode] = vim.tbl_extend('error', defaults[mode], {
+    [tsht_nodes_key] = { ":" .. tsht_nodes_cmd, { noremap = true } },
+  })
+end
+
+for _, mode in pairs({ "visual_mode", "visual_block_mode" }) do
+  defaults[mode] = vim.tbl_extend('error', defaults[mode], {
+    p = '"_p'
+  })
+end
+
+for _, mode in pairs({ "normal_mode", "visual_mode", "visual_block_mode" }) do
+  defaults[mode] = vim.tbl_extend('error', defaults[mode], {
+    -- Disable copy on clear
+    ["c"] = '"_c',
+  })
 end
 
 defaults["operator_mode"][tsht_nodes_key] = { ":<C-U>" .. tsht_nodes_cmd }

@@ -1,4 +1,4 @@
-local M = {}
+local M = { }
 
 local default_options = {
   title = true,
@@ -35,7 +35,7 @@ local default_options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  guifont = "FiraCode NerdFont Mono:17",               -- the font used in graphical neovim applications
   errorbells = false,
   incsearch = true,
   hidden = true,

@@ -2,6 +2,7 @@ local M = {}
 
 local Log = require "user.log"
 local lvim_lsp_utils = require "user.lsp.utils"
+local utils = require "user.utils"
 
 ---Resolve the configuration for a server by merging with the default config
 ---@param server_name string

@@ -118,9 +118,9 @@ function M.setup()
 
   require("user.lsp.handlers").setup()
 
-  if not utils.is_directory(userconf.lsp.templates_dir) then
+  -- if not utils.is_directory(userconf.lsp.templates_dir) then
     require("user.lsp.templates").generate_templates()
-  end
+  -- end
 
   bootstrap_nlsp {
     config_home = utils.join_paths(get_config_dir(), "lsp-settings"),
@@ -141,7 +141,8 @@ function M.setup()
     Log:warn("LSP Signature not installed")
   else
     lsp_signature.setup({
-
+      toggle_key = "<C-f>",
+      -- floating_window = false
     })
   end
 end
