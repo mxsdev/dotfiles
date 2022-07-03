@@ -19,6 +19,11 @@ function M.load_defaults()
         command=[[call setpos(".", getpos("'\""))]],
       }
     },
+    -- to future self:
+    -- if you're trying to change the default mode of vim-visual-multi,
+    -- then use the following commands:
+    -- call b:VM_Selection.Global.cursor_mode()
+    -- call b:VM_Selection.Global.extend_mode()
     {
       "TextYankPost",
       {

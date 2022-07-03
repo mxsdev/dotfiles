@@ -11,3 +11,4 @@ require("user.lsp").setup()
 require"user.core"
 require"user.syntax"
 require"user.docs"
+require"user.dap".setup()

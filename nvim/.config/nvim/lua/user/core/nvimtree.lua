@@ -57,7 +57,7 @@ function M.config()
         height = 30,
         hide_root_folder = false,
         side = "left",
-        preserve_window_proportions = false,
+        preserve_window_proportions = true,
         mappings = {
           custom_only = false,
           list = {},
