@@ -321,6 +321,12 @@ local M = {
       i = { ":TSConfigInfo<cr>", "Info" },
       p = { ":TSPlaygroundToggle<cr>", "Playground" },
     },
+    t = {
+      name = "Terminal",
+      b = { ":ToggleTerm size=10 direction=horizontal<cr>", "Below" },
+      r = { ":ToggleTerm size=50 direction=vertical<cr>", "Side" },
+      t = { ":ToggleTerm direction=float<cr>", "Floating" },
+    },
     r = {
       name = "React",
       s = { ":lua require('user.utils.react').select_closest_parent(false)<cr>", "Select Component"},

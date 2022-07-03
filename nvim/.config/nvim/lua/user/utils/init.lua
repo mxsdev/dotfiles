@@ -117,6 +117,10 @@ function M.dump(o)
    end
 end
 
+function M.edit(fname)
+  vim.cmd(string.format("e %s", fname))
+end
+
 function M.setup()
   require("user.utils.buffer").setup()
 end

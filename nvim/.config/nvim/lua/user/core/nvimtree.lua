@@ -1,6 +1,7 @@
 local M = {}
 local Log = require "user.log"
 local AU = require"user.core.autocmds"
+local utils = require "user.utils"
 
 function M.config()
   userconf.builtin.nvimtree = {
@@ -218,6 +219,11 @@ function M.setup()
         resize(winnr, bufnr)
       end
     })
+  end)
+
+  require("nvim-tree.events").on_file_created(function (details)
+    local fname = details.fname
+    utils.edit(fname)
   end)
 end
 

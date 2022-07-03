@@ -5,9 +5,10 @@ M.config = function()
   userconf.builtin["terminal"] = {
     on_config_done = nil,
     -- size can be a number or function which is passed the current terminal
-    size = 20,
+    size = 10,
     -- open_mapping = [[<c-\>]],
     open_mapping = [[<c-t>]],
+    -- open_mapping = nil,
     hide_numbers = true, -- hide the number column in toggleterm buffers
     shade_filetypes = {},
     shade_terminals = true,
@@ -16,7 +17,7 @@ M.config = function()
     insert_mappings = false, -- whether or not the open mapping applies in insert mode
     persist_size = false,
     -- direction = 'vertical' | 'horizontal' | 'window' | 'float',
-    direction = "float",
+    direction = "horizontal",
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
     -- This field is only relevant if direction is set to 'float'
