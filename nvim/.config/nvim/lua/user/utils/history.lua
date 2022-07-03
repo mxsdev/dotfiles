@@ -1,6 +1,7 @@
 local M = {}
+local utils = require"user.utils"
 
-function M.open_recent_file()
+function M.get_recent_files(cwd_only)
   local current_buffer = vim.api.nvim_get_current_buf()
   local current_file = vim.api.nvim_buf_get_name(current_buffer)
   local results = {}
@@ -24,21 +25,25 @@ function M.open_recent_file()
     end
   end
 
-  -- if opts.cwd_only then
-  --   local cwd = vim.loop.cwd()
-  --   cwd = cwd:gsub([[\]], [[\\]])
-  --   results = vim.tbl_filter(function(file)
-  --     return vim.fn.matchstrpos(file, cwd)[2] ~= -1
-  --   end, results)
-  -- end
+  if cwd_only then
+    local cwd = vim.loop.cwd()
+    cwd = cwd:gsub([[\]], [[\\]])
+    results = vim.tbl_filter(function(file)
+      return vim.fn.matchstrpos(file, cwd)[2] ~= -1
+    end, results)
+  end
 
-  -- local files = vim.v.oldfiles
-  --
-  -- if #files == 0 then
-  --   return
-  -- end
-  --
-  -- vim.cmd(string.format('e %s', files[1]))
+  return results
+end
+
+function M.open_recent_file(cwd_only)
+  local results = M.get_recent_files(cwd_only or false)
+
+  if #results == 0 then
+    return
+  end
+
+  utils.edit(results[1])
 end
 
 return M
