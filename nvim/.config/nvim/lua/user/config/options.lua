@@ -40,6 +40,7 @@ local default_options = {
   incsearch = true,
   hidden = true,
   autoindent = true,
+  laststatus = 3,
 }
 
 M.load_options = function()

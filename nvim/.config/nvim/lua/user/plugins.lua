@@ -43,13 +43,15 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "Tastyep/structlog.nvim"
+  use { "Tastyep/structlog.nvim", commit = "c527d97" }
   use "kyazdani42/nvim-web-devicons"
+  use "antoinemadec/FixCursorHold.nvim"
+  use "tpope/vim-dispatch"
 
   -- Core Plugins --
-  use 'lewis6991/impatient.nvim'
-  -- use "windwp/nvim-autopairs"
-  use(join_paths(get_config_dir(), "forked/nvim-autopairs"))
+  -- use 'lewis6991/impatient.nvim'
+  use "windwp/nvim-autopairs"
+  -- use(join_paths(get_config_dir(), "forked/nvim-autopairs"))
   use "numToStr/Comment.nvim"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/toggleterm.nvim"
@@ -66,7 +68,7 @@ return packer.startup(function(use)
     "max397574/lua-dev.nvim",
     module = "lua-dev",
   }
-  use "ahmedkhalf/project.nvim"
+  -- use "ahmedkhalf/project.nvim"
   use "goolord/alpha-nvim"
   use "windwp/nvim-ts-autotag"
   use "tpope/vim-surround"
@@ -97,10 +99,14 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
 
   -- Colors --
-  use 'phanviet/vim-monokai-pro'
+  --[[ use 'phanviet/vim-monokai-pro' ]]
   use 'xiyaowong/nvim-transparent'
-  use 'p00f/nvim-ts-rainbow'
-  use 'https://gitlab.com/__tpb/monokai-pro.nvim'
+  --[[ use { ]]
+  --[[   'https://gitlab.com/__tpb/monokai-pro.nvim', ]]
+  --[[   as = 'monokai-pro.nvim' ]]
+  --[[ } ]]
+  --[[ use 'p00f/nvim-ts-rainbow' ]]
+  --[[ use 'https://gitlab.com/__tpb/monokai-pro.nvim' ]]
   -- use "folke/todo-comments.nvim"
 
   -- Motion / Syntax --
@@ -112,20 +118,67 @@ return packer.startup(function(use)
   use 'ggandor/lightspeed.nvim'
   use "ziontee113/syntax-tree-surfer"
   use "ThePrimeagen/refactoring.nvim"
-  use(join_paths(get_config_dir(), "symbols-outline"))
+  -- use(join_paths(get_config_dir(), "symbols-outline"))
   -- use 'simrat39/symbols-outline.nvim'
   -- use 'stevearc/aerial.nvim'
 
   -- Documentation --
   use 'mzlogin/vim-markdown-toc'
+  use { 'heavenshell/vim-jsdoc', run='make install', ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' }}
+  -- use 'tjdevries/tree-sitter-lua'
 
   -- Debugging --
   use 'mfussenegger/nvim-dap'
+  -- use(join_paths(get_config_dir(), "forked/nvim-dap"))
   use "rcarriga/nvim-dap-ui"
+  -- use(join_paths(get_config_dir(), "forked/nvim-dap-ui"))
   use "theHamsta/nvim-dap-virtual-text"
+  use { "microsoft/vscode-js-debug", opt = true, run = "yarn install && yarn run compile" }
+  -- use(join_paths(get_config_dir(), "forked/nvim-dap-vscode-js"))
+  -- use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+  use "nvim-neotest/neotest"
+  use "haydenmeade/neotest-jest"
+  -- use(join_paths(get_config_dir(), "forked/neotest-jest"))
+  -- use "vim-test/vim-test"
+  -- use "rcarriga/vim-ultest"
 
   -- Editing --
-  use 'mg979/vim-visual-multi'
+  --[[ use 'mg979/vim-visual-multi' ]]
+
+  -- Markdown --
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  use 'lervag/vimtex'
+
+  use "smjonas/snippet-converter.nvim"
+  
+  use 'ThePrimeagen/vim-be-good'
+
+  --[[ use { ]]
+  --[[   "jesseleite/nvim-noirbuddy", ]]
+  --[[   requires = { "tjdevries/colorbuddy.nvim", branch = "dev" } ]]
+  --[[ } ]]
+  --[[ use {  ]]
+  --[[   'olivercederborg/poimandres.nvim', ]]
+  --[[   config = function() ]]
+  --[[     require('poimandres').setup { ]]
+  --[[       -- leave this setup function empty for default config ]]
+  --[[       -- or refer to the configuration section ]]
+  --[[       -- for configuration options ]]
+  --[[     } ]]
+  --[[   end ]]
+  --[[ } ]]
+
+  use "AndrewRadev/splitjoin.vim"
+
+  use "sainnhe/everforest"
+
+  --[[ if get_config_dir ~= nil then ]]
+  --[[   use(join_paths(get_config_dir(), "forked/everforest")) ]]
+  --[[ end ]]
+
+  --[[ use "SirVer/ultisnips" ]]
+  --[[ use "quangnguyen30192/cmp-nvim-ultisnips" ]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,0 +1,12 @@
+{
+  "SIr": {
+    "prefix": "SIr",
+    "description": "SIrange{}{}",
+    "body": "\\SIrange{$1\\}{$2\\}{$3\\}$0"
+  },
+  "si": {
+    "prefix": "si",
+    "description": "si{} (\\si unit)",
+    "body": "\\si{$1\\}$0"
+  }
+}

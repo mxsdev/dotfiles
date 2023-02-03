@@ -1,0 +1,178 @@
+{
+  "env": {
+    "prefix": "env",
+    "description": "New environment",
+    "body": [
+      "\\begin{$1\\}",
+      "\t$0",
+      "\\end{$1\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "eenv": {
+    "prefix": "eenv",
+    "description": "New environment",
+    "body": [
+      "\\begin{$1\\}{$2\\}",
+      "\t$0",
+      "\\end{$1\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "nn": {
+    "prefix": "nn",
+    "description": "Equation environment with suppressed numbering",
+    "body": [
+      "\\begin{equation*\\}",
+      "\t$1",
+      "\\end{equation*\\}",
+      "$0"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "all": {
+    "prefix": "all",
+    "description": "Align environment with suppressed numbering",
+    "body": [
+      "\\begin{align*\\}",
+      "\t$1",
+      "\\end{align*\\}",
+      "$0"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "itt": {
+    "prefix": "itt",
+    "description": "Itemize environment",
+    "body": [
+      "\\begin{itemize\\}",
+      "",
+      "\t\\item $0",
+      "",
+      "\\end{itemize\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "rit": {
+    "prefix": "rit",
+    "description": "Reversed itemize environment, used to split up an existing itemize environment",
+    "body": [
+      "\\end{itemize\\}",
+      "",
+      "$0",
+      "\\begin{itemize\\}"
+    ]
+  },
+  "enn": {
+    "prefix": "enn",
+    "description": "Enumerate environment",
+    "body": [
+      "\\begin{enumerate\\}",
+      "",
+      "\t\\item $0",
+      "",
+      "\\end{enumerate\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "tc": {
+    "prefix": "tc",
+    "description": "tcolorbox environment",
+    "body": [
+      "\\begin{tcolorbox\\}",
+      "\t$1",
+      "\\end{tcolorbox\\}",
+      "$0"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "pm": {
+    "prefix": "pm",
+    "description": "Parentheses matrix pmatrix",
+    "body": [
+      "\\begin{pmatrix\\}",
+      "\t$1",
+      "\\end{pmatrix\\}$0"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "case": {
+    "prefix": "case",
+    "description": "Cases environment",
+    "body": [
+      "\\begin{cases\\}",
+      "\t$1",
+      "\\end{cases\\}$0"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "arr": {
+    "prefix": "arr",
+    "description": "Array environment",
+    "body": [
+      "\\begin{array\\}{${1:cc}\\}",
+      "\t$2",
+      "\\end{array\\}$0"
+    ]
+  },
+  "qu": {
+    "prefix": "qu",
+    "description": "Quote environment",
+    "body": [
+      "\\begin{quote\\}",
+      "\t$1",
+      "\\end{quote\\}"
+    ]
+  },
+  "VV": {
+    "prefix": "VV",
+    "description": "Verbatim environment",
+    "body": [
+      "\\begin{verbatim\\}",
+      "\t$1",
+      "\\end{verbatim\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "mint": {
+    "prefix": "mint",
+    "description": "Minted environment",
+    "body": [
+      "\\begin{minted\\}{$1\\}",
+      "$0    ",
+      "\\end{minted\\}"
+    ]
+  },
+  "title": {
+    "prefix": "title",
+    "description": "mytitlepage environment for FMF documents",
+    "body": [
+      "\\begin{mytitlepage\\}{${1:title}\\}{${2:date}\\}",
+      "\t$0",
+      "\\end{mytitlepage\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  }
+}

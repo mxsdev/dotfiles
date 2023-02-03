@@ -54,6 +54,8 @@ function M.config()
           ["<C-k>"] = actions.move_selection_previous,
           ["<C-c>"] = actions.close,
           ["<C-l>"] = actions.select_default,
+          ["<C-n>"] = actions.cycle_history_next,
+          ["<C-p>"] = actions.cycle_history_prev,
           -- ["<C-j>"] = actions.cycle_history_next,
           -- ["<C-k>"] = actions.cycle_history_prev,
           ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,

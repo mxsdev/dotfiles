@@ -1,0 +1,5 @@
+return {
+  workingDirectories = {
+    { mode = 'auto' }
+  }
+}

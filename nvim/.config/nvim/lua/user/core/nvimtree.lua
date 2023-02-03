@@ -56,7 +56,7 @@ function M.config()
         width = 30,
         height = 30,
         hide_root_folder = false,
-        side = "left",
+        side = "right",
         preserve_window_proportions = true,
         mappings = {
           custom_only = false,
@@ -170,7 +170,7 @@ function M.setup()
   -- Implicitly update nvim-tree when project module is active
   if userconf.builtin.project and userconf.builtin.project.active then
     userconf.builtin.nvimtree.setup.respect_buf_cwd = true
-    userconf.builtin.nvimtree.setup.update_cwd = true
+    userconf.builtin.nvimtree.setup.update_cwd = false
     userconf.builtin.nvimtree.setup.update_focused_file = { enable = true, update_cwd = true }
   end
 

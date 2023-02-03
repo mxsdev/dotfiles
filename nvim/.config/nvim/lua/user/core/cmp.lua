@@ -2,6 +2,11 @@ local M = {}
 M.methods = {}
 local Log = require"user.log"
 
+local luasnip_installed, _ = pcall(require, "luasnip")
+local ultisnips_installed, cmp_ultisnips_mappings = pcall(require, "cmp_nvim_ultisnips.mappings")
+
+local engine = "luasnip"
+
 ---checks if the character preceding the cursor is a space character
 ---@return boolean true if it is a space character, false otherwise
 local check_backspace = function()
@@ -151,8 +156,9 @@ M.config = function()
   if not status_cmp_ok then
     return
   end
+
   local status_luasnip_ok, luasnip = pcall(require, "luasnip")
-  if not status_luasnip_ok then
+  if not status_luasnip_ok and engine == "luasnip" then
     return
   end
 
@@ -207,6 +213,7 @@ M.config = function()
         cmp_tabnine = "(Tabnine)",
         vsnip = "(Snippet)",
         luasnip = "(Snippet)",
+        ultisnips = "(Snippet)",
         buffer = "(Buffer)",
         tmux = "(TMUX)",
         -- nvim_lua = "(NVim)"
@@ -234,7 +241,11 @@ M.config = function()
     },
     snippet = {
       expand = function(args)
-        require("luasnip").lsp_expand(args.body)
+        if engine == "ultisnips" then
+          vim.fn["UltiSnips#Anon"](args.body)
+        elseif engine == "luasnip" then
+          require("luasnip").lsp_expand(args.body)
+        end
       end,
     },
     window = {
@@ -242,9 +253,10 @@ M.config = function()
       documentation = cmp.config.window.bordered(),
     },
     sources = {
+      { name = "ultisnips" },
+      { name = "luasnip" },
       { name = "nvim_lsp" },
       { name = "path" },
-      { name = "luasnip" },
       { name = "cmp_tabnine" },
       { name = "nvim_lua" },
       { name = "buffer" },
@@ -262,30 +274,38 @@ M.config = function()
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
       -- TODO: potentially fix emmet nonsense
       ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expandable() then
-          luasnip.expand()
-        elseif jumpable() then
-          luasnip.jump(1)
-        elseif check_backspace() then
-          fallback()
-        elseif is_emmet_active() then
-          return vim.fn["cmp#complete"]()
-        else
-          fallback()
+        if engine == "ultisnips" then
+          cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+        elseif engine == "luasnip" then
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.expandable() then
+            luasnip.expand()
+          elseif jumpable() then
+            luasnip.jump(1)
+          elseif check_backspace() then
+            fallback()
+          elseif is_emmet_active() then
+            return vim.fn["cmp#complete"]()
+          else
+            fallback()
+          end
         end
       end, {
         "i",
         "s",
       }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
+        if engine == "ultisnips" then
+          cmp_ultisnips_mappings.jump_backwards(fallback)
+        elseif engine == "luasnip" then
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
         end
       end, {
         "i",
@@ -294,22 +314,33 @@ M.config = function()
 
       ["<C-Space>"] = cmp.mapping.complete(),
       -- ["<C-e>"] = cmp.mapping.abort(),
-      ["<CR>"] = cmp.mapping(function(fallback)
-        if cmp.visible() and cmp.confirm(userconf.builtin.cmp.confirm_opts) then
-          if jumpable() then
-            luasnip.jump(1)
-          end
-          return
-        end
 
-        if jumpable() then
-          if not luasnip.jump(1) then
-            fallback()
-          end
-        else
-          fallback()
-        end
-      end),
+      --[[ ["<CR>"] = cmp.mapping(function(fallback) ]]
+      --[[   if engine == "ultisnips" then ]]
+      --[[     if cmp.visible() and cmp.confirm(userconf.builtin.cmp.confirm_opts) then ]]
+      --[[       return ]]
+      --[[     end ]]
+      --[[]]
+      --[[     fallback() ]]
+      --[[   elseif engine == "luasnip" then ]]
+      --[[     if cmp.visible() and cmp.confirm(userconf.builtin.cmp.confirm_opts) then ]]
+      --[[       if jumpable() then ]]
+      --[[         luasnip.jump(1) ]]
+      --[[       end ]]
+      --[[       return ]]
+      --[[     end ]]
+      --[[]]
+      --[[     if jumpable() then ]]
+      --[[       if not luasnip.jump(1) then ]]
+      --[[         fallback() ]]
+      --[[       end ]]
+      --[[     else ]]
+      --[[       fallback() ]]
+      --[[     end ]]
+      --[[   end ]]
+      --[[ end), ]]
+      ["<CR>"] = cmp.mapping.confirm({ select = true }),
+
     },
   }
 end
@@ -322,6 +353,11 @@ function M.setup()
   end
 
   cmp.setup(userconf.builtin.cmp)
+
+  local cmp_nvim_ultisnips_installed, cmp_nvim_ultisnips = pcall(require, "cmp_nvim_ultisnips")
+  if cmp_nvim_ultisnips_installed then
+    cmp_nvim_ultisnips.setup{}
+  end
 end
 
 return M

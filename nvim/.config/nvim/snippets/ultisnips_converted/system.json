@@ -1,0 +1,74 @@
+{
+  "pack": {
+    "prefix": "pack",
+    "description": "\\usepackage{}",
+    "body": "\\usepackage{$1\\}$0"
+  },
+  "nc": {
+    "prefix": "nc",
+    "description": "\\newcommand{}{}",
+    "body": "\\newcommand{$1\\}{$2\\}$0"
+  },
+  "rnc": {
+    "prefix": "rnc",
+    "description": "\\renewcommand{}{}",
+    "body": "\\renewcommand{$1\\}{$2\\}$0"
+  },
+  "inn": {
+    "prefix": "inn",
+    "description": "\\input{} intended for use in FMF documents",
+    "body": "\\input{${1:~/dotfiles/config/latex/templates/}$2\\}$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "s": {
+    "prefix": "s",
+    "description": "New section",
+    "body": "\\section{$1\\}$0"
+  },
+  "ss": {
+    "prefix": "ss",
+    "description": "New subsection",
+    "body": "\\subsection{$1\\}$0"
+  },
+  "sss": {
+    "prefix": "sss",
+    "description": "New subsubsection",
+    "body": "\\subsubsection{$1\\}$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "ns": {
+    "prefix": "ns",
+    "description": "\\newsec{} (for equation sheet sections)",
+    "body": "\\newsec{$1\\}$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "toc": {
+    "prefix": "toc",
+    "description": "\\tableofcontents",
+    "body": "\\tableofcontents"
+  },
+  "np": {
+    "prefix": "np",
+    "description": "\\newpage",
+    "body": "\\newpage"
+  },
+  "hr": {
+    "prefix": "hr",
+    "description": "\\href{url}{display name} (for url links)",
+    "body": "\\href{${1:url}\\}{${2:display name}\\}$0"
+  },
+  "prr": {
+    "prefix": "prr",
+    "description": "\\hfill-like fuctionality in math environments. Used in equation sheets",
+    "body": "& \\pushright{$1\\}\\\\$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  }
+}

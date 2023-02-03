@@ -1,0 +1,55 @@
+{
+  "fmm": {
+    "prefix": "fmm",
+    "description": "Beamer frame environment",
+    "body": [
+      "\\begin{frame\\}",
+      "\t\\frametitle{${1:title}\\}",
+      "\t$0",
+      "\\end{frame\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "bll": {
+    "prefix": "bll",
+    "description": "Block environment",
+    "body": [
+      "\\begin{block\\}{${1:title}\\}",
+      "\t$0\t",
+      "\\end{block\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "cols": {
+    "prefix": "cols",
+    "description": "Beamer columns environment",
+    "body": [
+      "\\begin{columns\\}",
+      "\t$0",
+      "\\end{columns\\}"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "coll": {
+    "prefix": "coll",
+    "description": "\\column{} (for use with beamer)",
+    "body": [
+      "\\column{$1\\}",
+      "$0"
+    ],
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "ps": {
+    "prefix": "ps",
+    "description": "\\pause (for beamer)",
+    "body": "\\pause"
+  }
+}

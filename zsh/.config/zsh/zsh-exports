@@ -6,9 +6,12 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 #
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 # export PATH="$PATH:$(yarn global bin)"
 # eval "$(pyenv init -)"
 #
 . "$HOME/.cargo/env"
 #
 eval "$(zoxide init zsh)"
+
+export DOCKER_DEFAULT_PLATFORM=linux/amd64

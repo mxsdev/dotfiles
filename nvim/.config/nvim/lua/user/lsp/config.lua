@@ -53,7 +53,7 @@ return {
     },
     virtual_text = {
       severity = {
-        min = vim.diagnostic.severity.ERROR
+        min = vim.diagnostic.severity.WARN
       }
     },
     update_in_insert = false,

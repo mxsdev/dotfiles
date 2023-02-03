@@ -131,6 +131,7 @@ local M = {
       k = { "<cmd>:lua require'dap'.step_out()<cr>", "Step Out"},
       r = { "<cmd>:lua require'dap'.repl.toggle()<cr>", "Toggle REPL" },
       u = { "<cmd>:lua require'dapui'.toggle()<cr>", "UI" },
+      e = { "<cmd>:lua require'dap'.set_exception_breakpoints()<cr>", "Set Exception Breakpoints"},
       w = {
         name = "Widgets",
         s = { "<cmd>:lua require'user.dap.widgets'.sidebar.scopes()<cr>", "Scopes" },
@@ -138,6 +139,13 @@ local M = {
         e = { "<cmd>:lua require'user.dap.widgets'.sidebar.expression()<cr>", "Expressionos" },
         t = { "<cmd>:lua require'user.dap.widgets'.sidebar.threads()<cr>", "Threads" },
         a = { "<cmd>:lua require'user.dap.widgets'.sidebar.all()<cr>", "All" },
+      },
+      t = {
+        name = "Test",
+        r = { '<cmd>:lua require("neotest").run.run()<cr>', "Run Nearest" },
+        R = { '<cmd>:lua require("neotest").run.run(vim.fn.expand("%"))<cr>', "Run File" },
+        d = { '<cmd>:lua require("neotest").run.run({strategy = "dap"})<cr>', "Debug Nearest" },
+        s = { '<cmd>:lua require("neotest").run.stop()<cr>', "Stop Running"},
       },
       L = { "<cmd>:lua require('dap').set_log_level('TRACE')<cr>", "Log Trace" },
     },
@@ -355,7 +363,18 @@ local M = {
       S = { ":lua require('user.utils.react').select_closest_parent(false, 2)<cr>", "Select Parent"},
       c = { ":lua require('user.utils.react').toggle_react_comment(1)<cr>", "Comment Component"},
       C = { ":lua require('user.utils.react').toggle_react_comment(2)<cr>", "Comment Parent"}
-    }
+    },
+    x = {
+      name = "LaTeX",
+      i = { "<plug>(vimtex-info)", "Info" },
+      I = { "<plug>(vimtex-info-full)", "Info Full" },
+      c = { "<plug>(vimtex-clean)", "Clean" },
+      C = { "<plug>(vimtex-clean-full)", "Clean Full" },
+      l = { "<plug>(vimtex-compile)", "Compile" },
+      k = { "<plug>(vimtex-stop)", "Stop" },
+      K = { "<plug>(vimtex-stop-all)", "Stop All" },
+      v = { "<plug>(vimtex-view)", "View" },
+    },
   },
 }
 

@@ -88,3 +88,4 @@ compinit
 export EDITOR="nvim"
 
 # set -o autopushd
+eval "$(fnm env --use-on-cd)"

@@ -1,6 +1,6 @@
 return {
   leader = "space",
-  colorscheme = "monokaipro",
+  colorscheme = "everforest",
   transparent_window = true,
   -- format_on_save = {
   --   ---@usage pattern string pattern used for the autocommand (Default: '*')

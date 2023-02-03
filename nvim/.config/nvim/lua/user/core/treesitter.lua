@@ -41,9 +41,9 @@ configs.setup {
     enable = true,
     enable_autocmd = false,
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-  },
+  --[[ rainbow = { ]]
+  --[[   enable = true, ]]
+  --[[   extended_mode = true, ]]
+  --[[   max_file_lines = nil, ]]
+  --[[ }, ]]
 }

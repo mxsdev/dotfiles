@@ -4,12 +4,23 @@ local Log = require"user.log"
 M.config = function()
   userconf.builtin.luasnip = {
     sources = {
-      friendly_snippets = true,
+      friendly_snippets = false,
     },
   }
 end
 
 M.setup = function()
+  --   local dapui_installed, dapui = pcall(require, "dapui")
+  -- if not dapui_installed then
+  --   Log:warn("Dapui not installed!")
+  --   return
+  -- end
+
+  local luasnip_installed, _ = pcall(require, "luasnip")
+  if not luasnip_installed then
+    return
+  end
+
   local utils = require "user.utils"
   local paths = {}
 

@@ -1,0 +1,66 @@
+{
+  "ann": {
+    "prefix": "ann",
+    "description": "\\annotate{}{} (custom command for annotated stackrel)",
+    "body": "\\annotate{${1:above}\\}{${2:below}\\}$0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "and": {
+    "prefix": "and",
+    "description": "static snippet: qquad-spaced 'and' in equation",
+    "body": "\\qquad \\text{and\\} \\qquad $0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "where": {
+    "prefix": "where",
+    "description": "static snippet: quad-spaced 'where' in equation",
+    "body": "\\quad \\text{where \\} \\, $0",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "else": {
+    "prefix": "else",
+    "description": "\\text{otherwise}",
+    "body": "\\text{otherwise\\}",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ">>": {
+    "prefix": ">>",
+    "description": "\\implies",
+    "body": "\\implies ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "lra": {
+    "prefix": "lra",
+    "description": "\\leftrightarrow",
+    "body": "\\leftrightarrow ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ",.": {
+    "prefix": ",.",
+    "description": "\\cdot",
+    "body": "\\cdot ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "xx": {
+    "prefix": "xx",
+    "description": "\\cross",
+    "body": "\\times ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  }
+}

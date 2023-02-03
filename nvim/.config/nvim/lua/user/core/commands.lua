@@ -1,5 +1,7 @@
 local M = {}
 
+vim.api.nvim_create_user_command("CopyPath", "call setreg('+', expand('%:p'))", {})
+
 vim.cmd [[
   function! QuickFixToggle()
     if empty(filter(getwininfo(), 'v:val.quickfix'))

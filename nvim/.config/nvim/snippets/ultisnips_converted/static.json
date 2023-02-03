@@ -1,0 +1,44 @@
+{
+  "--": {
+    "prefix": "--",
+    "description": "Commented line % ----------------- %",
+    "body": "% --------------------------------------------- %",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "rule": {
+    "prefix": "rule",
+    "description": "horizontal rule",
+    "body": "\\rule{\\textwidth\\}{0.5pt\\}"
+  },
+  "hl": {
+    "prefix": "hl",
+    "description": "\\hline with vertical spacing for tables",
+    "body": "\\hline {\\rule{0pt\\}{2.5ex\\}\\} \\hspace{-7pt\\}"
+  },
+  "hff": {
+    "prefix": "hff",
+    "description": "\\hfill",
+    "body": "\\hfill ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "tbs": {
+    "prefix": "tbs",
+    "description": "\\textbackslash",
+    "body": "\\textbackslash ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  "ii": {
+    "prefix": "ii",
+    "description": "Item for enumerated environments \\item",
+    "body": "\\item ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  }
+}

@@ -10,3 +10,5 @@ alias zshrc='nvim ~/.config/zsh/'
 
 alias nv='nvim'
 alias lg='lazygit'
+
+alias act='act --container-architecture linux/amd64'

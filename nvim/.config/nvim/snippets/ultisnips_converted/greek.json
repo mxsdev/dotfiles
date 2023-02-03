@@ -1,0 +1,282 @@
+{
+  ";N": {
+    "prefix": ";N",
+    "description": "\\nabla",
+    "body": "\\nabla ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";a": {
+    "prefix": ";a",
+    "description": "\\alpha",
+    "body": "\\alpha",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";b": {
+    "prefix": ";b",
+    "description": "\\beta",
+    "body": "\\beta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";g": {
+    "prefix": ";g",
+    "description": "\\gamma",
+    "body": "\\gamma",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";G": {
+    "prefix": ";G",
+    "description": "\\Gamma",
+    "body": "\\Gamma",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";d": {
+    "prefix": ";d",
+    "description": "\\delta",
+    "body": "\\delta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";D": {
+    "prefix": ";D",
+    "description": "\\Delta",
+    "body": "\\Delta ",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";e": {
+    "prefix": ";e",
+    "description": "\\epsilon",
+    "body": "\\epsilon",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";ve": {
+    "prefix": ";ve",
+    "description": "\\varepsilon",
+    "body": "\\varepsilon",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";z": {
+    "prefix": ";z",
+    "description": "\\zeta",
+    "body": "\\zeta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";h": {
+    "prefix": ";h",
+    "description": "\\eta",
+    "body": "\\eta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";o": {
+    "prefix": ";o",
+    "description": "\\theta",
+    "body": "\\theta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";vo": {
+    "prefix": ";vo",
+    "description": "\\vartheta",
+    "body": "\\vartheta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";O": {
+    "prefix": ";O",
+    "description": "\\Theta",
+    "body": "\\Theta",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";k": {
+    "prefix": ";k",
+    "description": "\\kappa",
+    "body": "\\kappa",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";l": {
+    "prefix": ";l",
+    "description": "\\lambda",
+    "body": "\\lambda",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";L": {
+    "prefix": ";L",
+    "description": "\\Lambda",
+    "body": "\\Lambda",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";m": {
+    "prefix": ";m",
+    "description": "\\mu",
+    "body": "\\mu",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";n": {
+    "prefix": ";n",
+    "description": "\\nu",
+    "body": "\\nu",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";x": {
+    "prefix": ";x",
+    "description": "\\xi",
+    "body": "\\xi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";X": {
+    "prefix": ";X",
+    "description": "\\Xi",
+    "body": "\\Xi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";i": {
+    "prefix": ";i",
+    "description": "\\pi",
+    "body": "\\pi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";I": {
+    "prefix": ";I",
+    "description": "\\Pi",
+    "body": "\\Pi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";r": {
+    "prefix": ";r",
+    "description": "\\rho",
+    "body": "\\rho",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";s": {
+    "prefix": ";s",
+    "description": "\\sigma",
+    "body": "\\sigma",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";S": {
+    "prefix": ";S",
+    "description": "\\Sigma",
+    "body": "\\Sigma",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";t": {
+    "prefix": ";t",
+    "description": "\\tau",
+    "body": "\\tau",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";f": {
+    "prefix": ";f",
+    "description": "\\phi",
+    "body": "\\phi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";vf": {
+    "prefix": ";vf",
+    "description": "\\varphi",
+    "body": "\\varphi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";F": {
+    "prefix": ";F",
+    "description": "\\Phi",
+    "body": "\\Phi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";c": {
+    "prefix": ";c",
+    "description": "\\chi",
+    "body": "\\chi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";p": {
+    "prefix": ";p",
+    "description": "\\psi",
+    "body": "\\psi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";P": {
+    "prefix": ";P",
+    "description": "\\Psi",
+    "body": "\\Psi",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";w": {
+    "prefix": ";w",
+    "description": "\\omega",
+    "body": "\\omega",
+    "luasnip": {
+      "autotrigger": true
+    }
+  },
+  ";W": {
+    "prefix": ";W",
+    "description": "\\Omega",
+    "body": "\\Omega",
+    "luasnip": {
+      "autotrigger": true
+    }
+  }
+}

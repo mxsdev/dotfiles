@@ -84,6 +84,8 @@ local defaults = {
   },
 
   normal_mode = {
+    -- ["j"] = { "v:count ? 'j' : 'gj'", { noremap = true } },
+    -- ["k"] = { "v:count ? 'k' : 'gk'", { noremap = true } },
     -- Easier indent
     [">"] = ">>",
     ["<"] = "<<",
@@ -130,7 +132,9 @@ local defaults = {
     ["vx"] = "<cmd>STSSelectMasterNode<cr>",
     ["vn"] = "<cmd>STSSelectCurrentNode<cr>",
     ["<A-l>"] = "v<cmd>STSSelectNextSiblingNode<cr>o<esc>",
-    ["<A-h>"] = "v<cmd>STSSelectPrevSiblingNode<cr>o<esc>"
+    ["<A-h>"] = "v<cmd>STSSelectPrevSiblingNode<cr>o<esc>",
+
+    ["<C-Space>"] = "<nop>"
   },
 
   term_mode = {
@@ -223,6 +227,9 @@ if vim.fn.has "mac" == 1 then
   defaults.normal_mode["<A-Right>"] = defaults.normal_mode["<C-Right>"]
   Log:debug "Activated mac keymappings"
 end
+
+vim.api.nvim_exec("noremap <expr> k v:count ? 'k' : 'gk'", false)
+vim.api.nvim_exec("noremap <expr> j v:count ? 'j' : 'gj'", false)
 
 -- Unsets all keybindings defined in keymaps
 -- @param keymaps The table of key mappings containing a list per mode (normal_mode, insert_mode, ..)

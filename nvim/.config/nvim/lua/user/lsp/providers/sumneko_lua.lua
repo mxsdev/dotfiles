@@ -12,6 +12,9 @@ local opts = {
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
+      runtime = {
+        version = "Lua 5.4",
+      },
     },
   },
 }

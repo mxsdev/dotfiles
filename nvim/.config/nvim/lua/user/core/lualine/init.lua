@@ -5,6 +5,7 @@ M.config = function()
   userconf.builtin.lualine = {
     active = true,
     style = "lvim",
+    theme = "auto",
     options = {
       icons_enabled = nil,
       component_separators = nil,

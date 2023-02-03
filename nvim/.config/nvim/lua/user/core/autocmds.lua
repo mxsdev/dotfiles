@@ -202,3 +202,4 @@ function M.define_autocmds(definitions)
 end
 
 return M
+
