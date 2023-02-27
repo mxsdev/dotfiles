@@ -10,15 +10,15 @@ function M.config()
     setup = {
       disable_netrw = true,
       hijack_netrw = true,
-      open_on_setup = false,
-      open_on_setup_file = false,
+      -- open_on_setup = false,
+      -- open_on_setup_file = false,
       sort_by = "name",
-      ignore_buffer_on_setup = false,
-      ignore_ft_on_setup = {
-        "startify",
-        "dashboard",
-        "alpha",
-      },
+      -- ignore_buffer_on_setup = false,
+      -- ignore_ft_on_setup = {
+      --   "startify",
+      --   "dashboard",
+      --   "alpha",
+      -- },
       auto_reload_on_write = true,
       hijack_unnamed_buffer_when_opening = false,
       hijack_directories = {
@@ -54,7 +54,7 @@ function M.config()
       },
       view = {
         width = 30,
-        height = 30,
+        -- height = 30,
         hide_root_folder = false,
         side = "right",
         preserve_window_proportions = true,
@@ -170,7 +170,7 @@ function M.setup()
   -- Implicitly update nvim-tree when project module is active
   if userconf.builtin.project and userconf.builtin.project.active then
     userconf.builtin.nvimtree.setup.respect_buf_cwd = true
-    userconf.builtin.nvimtree.setup.update_cwd = false
+    userconf.builtin.nvimtree.setup.update_cwd = true
     userconf.builtin.nvimtree.setup.update_focused_file = { enable = true, update_cwd = true }
   end
 

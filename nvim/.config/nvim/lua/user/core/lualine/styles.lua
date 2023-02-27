@@ -68,7 +68,7 @@ styles.default = {
 styles.lvim = {
   style = "lvim",
   options = {
-    theme = "monokaipro",
+    theme = "auto",
     icons_enabled = userconf.use_icons,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },

@@ -52,7 +52,7 @@ local defaults = {
     ["<A-k>"] = "<Esc>:m .-2<CR>==gi",
 
     -- Space in front
-    ["<S-Space>"] = " <Left>",
+    -- ["<S-Space>"] = " <Left>",
 
     -- navigation
     ["<A-Up>"] = "<C-\\><C-N><C-w>k",

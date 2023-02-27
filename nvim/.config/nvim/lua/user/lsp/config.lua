@@ -1,5 +1,6 @@
 local skipped_servers = {
   "angularls",
+  "sumneko_lua",
   -- "tsserver",
   "ansiblels",
   "ccls",
@@ -90,7 +91,7 @@ return {
   },
   on_attach_callback = nil,
   on_init_callback = nil,
-  automatic_servers_installation = true,
+  -- automatic_servers_installation = true,
   automatic_configuration = {
     ---@usage list of servers that the automatic installer will skip
     skipped_servers = skipped_servers,
@@ -127,16 +128,12 @@ return {
     insert_mode = {},
     visual_mode = {},
   },
-  ---@usage list of settings of nvim-lsp-installer
+  ---@usage list of settings of mason.nvim
   installer = {
     setup = {
       ensure_installed = {},
-      ui = {
-        icons = {
-          server_installed = "✓",
-          server_pending = "",
-          server_uninstalled = "✗",
-        },
+      automatic_installation = {
+        exclude = {},
       },
     },
   },

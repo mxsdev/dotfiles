@@ -1,6 +1,7 @@
 local M = {}
 local Log = require "user.log"
 local utils = require "user.utils"
+local lsp_config = require "user.lsp.config"
 local autocmds = require "user.core.autocmds"
 
 local function add_lsp_buffer_keybindings(bufnr)
@@ -118,6 +119,12 @@ function M.setup()
 
   require("user.lsp.handlers").setup()
 
+  pcall(function() 
+    require("mason-lspconfig").setup(lsp_config.installer.setup)
+    local util = require("lspconfig.util")
+    util.on_setup = false
+  end)
+
   -- if not utils.is_directory(userconf.lsp.templates_dir) then
     require("user.lsp.templates").generate_templates()
   -- end
@@ -125,11 +132,6 @@ function M.setup()
   bootstrap_nlsp {
     config_home = utils.join_paths(get_config_dir(), "lsp-settings"),
     append_default_schemas = true,
-  }
-
-  require("nvim-lsp-installer").setup {
-    -- use the default nvim_data_dir, since the server binaries are independent
-    install_root_dir = utils.join_paths(vim.call("stdpath", "data"), "lsp_servers"),
   }
 
   require("user.lsp.null-ls").setup()

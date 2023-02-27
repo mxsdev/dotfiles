@@ -237,7 +237,7 @@ local M = {
       w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
       f = { "<cmd>lua require('user.lsp.utils').format()<cr>", "Format" },
       i = { "<cmd>LspInfo<cr>", "Info" },
-      I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+      I = { "<cmd>Mason<cr>", "Mason Info" },
       j = {
         vim.diagnostic.goto_next,
         "Next Diagnostic",

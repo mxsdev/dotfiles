@@ -1,5 +1,18 @@
 local fn = vim.fn
 
+-- local function get_config_dir()
+--   local lvim_config_dir = os.getenv "NVIM_CONFIG_DIR"
+--   if not lvim_config_dir then
+--     return vim.call("stdpath", "config")
+--   end
+--   return lvim_config_dir
+-- end
+--
+-- local function join_paths(...)
+--   local result = table.concat({ ... }, path_sep)
+--   return result
+-- end
+
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path, nil, nil)) > 0 then -- luacheck: ignore
@@ -68,7 +81,7 @@ return packer.startup(function(use)
     "max397574/lua-dev.nvim",
     module = "lua-dev",
   }
-  -- use "ahmedkhalf/project.nvim"
+  use "ahmedkhalf/project.nvim"
   use "goolord/alpha-nvim"
   use "windwp/nvim-ts-autotag"
   use "tpope/vim-surround"
@@ -84,7 +97,9 @@ return packer.startup(function(use)
   --- LSP ---
   use "neovim/nvim-lspconfig"
   use "tamago324/nlsp-settings.nvim"
-  use "williamboman/nvim-lsp-installer"
+  -- use "williamboman/nvim-lsp-installer"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "b0o/schemastore.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
   use "jose-elias-alvarez/nvim-lsp-ts-utils"
@@ -134,7 +149,7 @@ return packer.startup(function(use)
   -- use(join_paths(get_config_dir(), "forked/nvim-dap-ui"))
   use "theHamsta/nvim-dap-virtual-text"
   use { "microsoft/vscode-js-debug", opt = true, run = "yarn install && yarn run compile" }
-  -- use(join_paths(get_config_dir(), "forked/nvim-dap-vscode-js"))
+  use(join_paths(get_config_dir(), "forked/nvim-dap-vscode-js"))
   -- use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
   use "nvim-neotest/neotest"
   use "haydenmeade/neotest-jest"
