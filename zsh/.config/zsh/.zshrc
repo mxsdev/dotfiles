@@ -89,3 +89,8 @@ export EDITOR="nvim"
 
 # set -o autopushd
 eval "$(fnm env --use-on-cd)"
+
+# pnpm
+export PNPM_HOME="/Users/mxs/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

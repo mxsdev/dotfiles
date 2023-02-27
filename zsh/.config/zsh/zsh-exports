@@ -19,3 +19,12 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 [ -f "/Users/maxstoumen/.ghcup/env" ] && source "/Users/maxstoumen/.ghcup/env" # ghcup-env
+
+export PATH="/Users/mxs/Library/Caches/fnm_multishells/10602_1675411085969/bin":$PATH
+export FNM_VERSION_FILE_STRATEGY="local"
+export FNM_ARCH="arm64"
+export FNM_MULTISHELL_PATH="/Users/mxs/Library/Caches/fnm_multishells/10602_1675411085969"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_DIR="/Users/mxs/Library/Application Support/fnm"
+export FNM_LOGLEVEL="info"
+rehash
