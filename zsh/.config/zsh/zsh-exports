@@ -7,6 +7,11 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 #
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # export PATH="$PATH:$(yarn global bin)"
 # eval "$(pyenv init -)"
 #
@@ -28,3 +33,4 @@ export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
 export FNM_DIR="/Users/mxs/Library/Application Support/fnm"
 export FNM_LOGLEVEL="info"
 rehash
+export PATH="/Users/maxstoumen/.deno/bin:$PATH"

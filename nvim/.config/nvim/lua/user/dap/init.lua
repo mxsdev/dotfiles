@@ -49,13 +49,20 @@ function M.setup()
 
   for _, language in ipairs({ "typescript", "javascript" }) do
     dap.configurations[language] = {
+      -- {
+      --   type = "pwa-node",
+      --   request = "launch",
+      --   name = "Launch file",
+      --   program = "${file}",
+      --   cwd = "${workspaceFolder}",
+      -- },
       {
         type = "pwa-node",
         request = "launch",
         name = "Launch file",
         program = "${file}",
         cwd = "${workspaceFolder}",
-      },
+      }
       -- {
       --   type = 'node',
       --   request = 'launch',
@@ -140,7 +147,11 @@ function M.setup()
 
   require"user.dap.neotest".setup()
 
+
+
   local is_ok, dap_js = pcall(require, "dap-vscode-js")
+
+  -- print("is ok: " .. (is_ok and "true" or "false"))
 
   if is_ok then
     dap_js.setup({
@@ -153,6 +164,8 @@ function M.setup()
       -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
     })
   end
+
+  -- /Users/maxstoumen/.local/share/nvim/site/pack/packer/opt/vscode-js-debug/dist/src/dapDebugServer.js
 
   -- vim.g["test#strategy"] = "neovim"
   -- vim.g["test#javascript#runner"] = "jest"

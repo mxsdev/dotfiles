@@ -148,8 +148,15 @@ return packer.startup(function(use)
   use "rcarriga/nvim-dap-ui"
   -- use(join_paths(get_config_dir(), "forked/nvim-dap-ui"))
   use "theHamsta/nvim-dap-virtual-text"
-  use { "microsoft/vscode-js-debug", opt = true, run = "yarn install && yarn run compile" }
+
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp dapDebugServer"
+  }
+
   use(join_paths(get_config_dir(), "forked/nvim-dap-vscode-js"))
+
   -- use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
   use "nvim-neotest/neotest"
   use "haydenmeade/neotest-jest"
