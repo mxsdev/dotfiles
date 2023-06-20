@@ -44,3 +44,6 @@ yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="Raycast" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^FL Studio$" manage=off
+yabai -m rule --add app="^VPN$" manage=off
+yabai -m rule --add app="^Mullvad$" manage=off
+yabai -m rule --add app="^Install$" manage=off
