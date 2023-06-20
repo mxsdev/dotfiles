@@ -2,14 +2,14 @@ return {
   leader = "space",
   colorscheme = "everforest",
   transparent_window = true,
-  -- format_on_save = {
-  --   ---@usage pattern string pattern used for the autocommand (Default: '*')
-  --   pattern = "*",
-  --   ---@usage timeout number timeout in ms for the format request (Default: 1000)
-  --   timeout = 1000,
-  --   ---@usage filter func to select client
-  --   filter = require("user.lsp.handlers").format_filter,
-  -- },
+  format_on_save = {
+    ---@usage pattern string pattern used for the autocommand (Default: '*')
+    pattern = "*",
+    ---@usage timeout number timeout in ms for the format request (Default: 1000)
+    timeout = 1000,
+    ---@usage filter func to select client
+    filter = require("user.lsp.handlers").format_filter,
+  },
   use_icons = true,
   builtin = { },
   options = { },
