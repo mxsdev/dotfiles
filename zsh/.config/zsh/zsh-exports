@@ -35,7 +35,7 @@ export FNM_LOGLEVEL="info"
 
 rehash
 export PATH="/Users/maxstoumen/.deno/bin:$PATH"
-source ~/.gvm/scripts/gvm
+# source ~/.gvm/scripts/gvm
 
 export PATH="/Users/mxs/.deno/bin:$PATH"
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
