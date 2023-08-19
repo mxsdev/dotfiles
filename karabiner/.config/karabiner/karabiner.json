@@ -478,8 +478,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 620,
-                        "vendor_id": 1452
+                        "product_id": 32785,
+                        "vendor_id": 12851
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
@@ -503,6 +503,26 @@
                                     "key_code": "right_option"
                                 }
                             ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_option"
+                                }
+                            ]
                         }
                     ],
                     "treat_as_built_in_keyboard": false
@@ -513,8 +533,8 @@
                     "identifiers": {
                         "is_keyboard": false,
                         "is_pointing_device": true,
-                        "product_id": 617,
-                        "vendor_id": 76
+                        "product_id": 32785,
+                        "vendor_id": 12851
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
@@ -527,7 +547,7 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 4876,
+                        "product_id": 4907,
                         "vendor_id": 8916
                     },
                     "ignore": false,
@@ -541,7 +561,7 @@
                     "identifiers": {
                         "is_keyboard": false,
                         "is_pointing_device": true,
-                        "product_id": 4876,
+                        "product_id": 4907,
                         "vendor_id": 8916
                     },
                     "ignore": true,
