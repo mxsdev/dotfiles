@@ -1,6 +1,6 @@
 local M = {}
 local Log = require "user.log"
-local AU = require"user.core.autocmds"
+local AU = require "user.core.autocmds"
 local utils = require "user.utils"
 
 function M.config()
@@ -58,10 +58,10 @@ function M.config()
         hide_root_folder = false,
         side = "right",
         preserve_window_proportions = true,
-        mappings = {
-          custom_only = false,
-          list = {},
-        },
+        -- mappings = {
+        --   custom_only = false,
+        --   list = {},
+        -- },
         number = true,
         relativenumber = true,
         signcolumn = "yes",
@@ -136,7 +136,7 @@ function M.config()
           restrict_above_cwd = false,
         },
         open_file = {
-          quit_on_open = false,
+          quit_on_open = true,
           resize_window = true,
           window_picker = {
             enable = true,
@@ -182,20 +182,47 @@ function M.setup()
     require("userconf.core.nvimtree").start_telescope "live_grep"
   end
 
-  -- Add useful keymaps
-  if #userconf.builtin.nvimtree.setup.view.mappings.list == 0 then
-    userconf.builtin.nvimtree.setup.view.mappings.list = {
-      { key = { "l", "<CR>", "o" }, action = "edit", mode = "n" },
-      { key = "h", action = "close_node" },
-      { key = "v", action = "vsplit" },
-      { key = "C", action = "cd" },
-      { key = "gtf", action = "telescope_find_files", action_cb = telescope_find_files },
-      { key = "gtg", action = "telescope_live_grep", action_cb = telescope_live_grep },
-      { key = "<C-s>", action="<Plug>Telescope_s"},
-      { key = "d", action="trash" },
-      { key = "D", action="remove" }
-    }
+  -- local mappings = {
+  --   { key = { "l", "<CR>", "o" }, action = "edit",                 mode = "n" },
+  --   { key = "h",                  action = "close_node" },
+  --   { key = "v",                  action = "vsplit" },
+  --   { key = "C",                  action = "cd" },
+  --   { key = "gtf",                action = "telescope_find_files", action_cb = telescope_find_files },
+  --   { key = "gtg",                action = "telescope_live_grep",  action_cb = telescope_live_grep },
+  --   { key = "<C-s>",              action = "<Plug>Telescope_s" },
+  --   { key = "d",                  action = "trash" },
+  --   { key = "D",                  action = "remove" }
+  -- }
+
+  local function on_attach(bufnr)
+    local api = require('nvim-tree.api')
+
+    local function opts(desc)
+      return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    api.config.mappings.default_on_attach(bufnr)
+
+    vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+    vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+    vim.keymap.set("n", "o", api.node.open.edit, opts("Open"))
+
+    vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+
+    vim.keymap.set("n", "v", api.node.open.vertical, opts("Open V-Split"))
+
+    vim.keymap.set("n", "C", api.tree.change_root_to_node, opts("CD"))
+
+    vim.keymap.set("n", "gtf", telescope_find_files, opts("Telescope Find Files"))
+    vim.keymap.set("n", "gtg", telescope_live_grep, opts("Telescope Live Grep"))
+
+    -- vim.keymap.set("n", "<C-s>", telescope_find_files, opts("Telescope Find Files"))
+
+    vim.keymap.set("n", "d", api.fs.trash, opts("Trash"))
+    vim.keymap.set("n", "D", api.fs.remove, opts("Remove"))
   end
+
+  userconf.builtin.nvimtree.setup.on_attach = on_attach
 
   nvim_tree.setup(userconf.builtin.nvimtree.setup)
 
@@ -210,7 +237,15 @@ function M.setup()
 
   local view = require("nvim-tree.view")
 
-  require("nvim-tree.events").on_tree_open(function ()
+  local api = require("nvim-tree.api")
+  local Event = api.events.Event
+
+  api.events.subscribe(Event.FileCreated, function(data)
+    local fname = data.new_name
+    utils.edit(fname)
+  end)
+
+  api.events.subscribe(Event.TreeOpen, function()
     local winnr = view.get_winnr()
     local bufnr = view.get_bufnr()
 
@@ -219,11 +254,6 @@ function M.setup()
         resize(winnr, bufnr)
       end
     })
-  end)
-
-  require("nvim-tree.events").on_file_created(function (details)
-    local fname = details.fname
-    utils.edit(fname)
   end)
 end
 

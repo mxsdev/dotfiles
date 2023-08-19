@@ -36,6 +36,7 @@ local skipped_servers = {
   "tflint",
   "verible",
   -- "vuels",
+  "wgsl_analyzer",
 }
 
 local skipped_filetypes = { "markdown", "rst", "plaintext" }

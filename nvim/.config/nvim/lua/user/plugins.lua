@@ -51,11 +51,11 @@ packer.init {
   },
 }
 
-return packer.startup(function(use) 
+return packer.startup(function(use)
   -- Libraries --
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
   use { "Tastyep/structlog.nvim", commit = "c527d97" }
   use "kyazdani42/nvim-web-devicons"
   use "antoinemadec/FixCursorHold.nvim"
@@ -85,7 +85,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "windwp/nvim-ts-autotag"
   use "tpope/vim-surround"
-  
+
   -- CMP Plugins --
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
@@ -93,7 +93,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-nvim-lua"
-  
+
   --- LSP ---
   use "neovim/nvim-lspconfig"
   use "tamago324/nlsp-settings.nvim"
@@ -104,7 +104,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim"
   use "jose-elias-alvarez/nvim-lsp-ts-utils"
   use "ray-x/lsp_signature.nvim"
-  
+
   -- TreeSitter --
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -139,7 +139,8 @@ return packer.startup(function(use)
 
   -- Documentation --
   use 'mzlogin/vim-markdown-toc'
-  use { 'heavenshell/vim-jsdoc', run='make install', ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' }}
+  use { 'heavenshell/vim-jsdoc', run = 'make install', ft = { 'typescript', 'typescriptreact', 'javascript',
+    'javascriptreact' } }
   -- use 'tjdevries/tree-sitter-lua'
 
   -- Debugging --
@@ -168,12 +169,17 @@ return packer.startup(function(use)
   --[[ use 'mg979/vim-visual-multi' ]]
 
   -- Markdown --
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  })
 
   use 'lervag/vimtex'
 
   use "smjonas/snippet-converter.nvim"
-  
+
   use 'ThePrimeagen/vim-be-good'
 
   --[[ use { ]]

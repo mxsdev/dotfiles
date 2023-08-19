@@ -2,11 +2,8 @@ local colorscheme = userconf.colorscheme
 
 -- Everforest
 if colorscheme == 'everforest' then
-  -- for indent: blend between 21272B and 4F5B58
-
-  --[[ vim.cmd 'hi! IndentBlanklineChar guifg=#2A3134' ]]
-  vim.cmd 'hi! IndentBlanklineChar guifg=#333C3D'
-  vim.cmd 'hi! IndentBlanklineContextChar guifg=#4F5B58'
+  -- for indent: blend between 2b2b2b and #56635f
+  vim.cmd 'highlight IndentBlanklineChar guifg=#414846'
 end
 
 -- Bold highlight groups
