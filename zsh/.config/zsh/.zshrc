@@ -12,8 +12,15 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # completions
-autoload -Uz compinit
 zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
@@ -43,9 +50,9 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 
 ## Syntax Highlighting Styles
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
-ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
+# ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
+# ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
+# ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
 # File manager
 # Use ranger to switch directories and bind it to ctrl-o
@@ -70,7 +77,7 @@ bindkey "^l" forward-char
 bindkey "^h" backward-char
 # bindkey "^L" clear-screen
 # bindkey -s "^c" "\e"
-bindkey "^e" vi-cmd-mode
+# bindkey "^e" vi-cmd-mode
 
 # FZF, Completions
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
@@ -79,7 +86,6 @@ bindkey "^e" vi-cmd-mode
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
-compinit
 
 # Edit line in vim with ctrl+e
 # autoload edit-command-line; zle -N edit-command-line
@@ -94,3 +100,5 @@ eval "$(fnm env --use-on-cd)"
 # export PNPM_HOME="/Users/mxs/Library/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
 # # pnpm end
+
+export GPG_TTY=$(tty)
