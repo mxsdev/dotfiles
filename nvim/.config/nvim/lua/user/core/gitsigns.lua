@@ -1,5 +1,5 @@
 local M = {}
-local Log = require"user.log"
+local Log = require "user.log"
 
 M.config = function()
   userconf.builtin.gitsigns = {
@@ -40,11 +40,11 @@ M.config = function()
       },
       numhl = false,
       linehl = false,
-      keymaps = {
-        -- Default keymap options
-        noremap = true,
-        buffer = true,
-      },
+      -- keymaps = {
+      --   -- Default keymap options
+      --   noremap = true,
+      --   buffer = true,
+      -- },
       signcolumn = true,
       word_diff = false,
       attach_to_untracked = true,

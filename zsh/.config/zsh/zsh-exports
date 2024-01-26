@@ -19,7 +19,8 @@ eval "$(pyenv init -)"
 #
 eval "$(zoxide init zsh)"
 
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
+# export DOCKER_DEFAULT_PLATFORM=linux/amd64
+export PATH="$HOME/.docker/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
@@ -35,3 +36,12 @@ export PATH="/Users/mxs/.deno/bin:$PATH"
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 export GPG_TTY=$(tty)
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ffmpeg@4/lib/pkgconfig:$P"
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+
+export SPARK_HOME="/opt/homebrew/Cellar/apache-spark/3.5.0/libexec"
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.elan/bin:$PATH"

@@ -21,5 +21,8 @@ comment.setup {
       key = ctx.ctype == U.ctype.linewise and "__default" or "__multiline",
       location = location,
     }
-  end,
-}
+  end,}
+
+local ft = require("Comment.ft")
+
+ft.set('wgsl', { '//%s', '/*%s*/' })
