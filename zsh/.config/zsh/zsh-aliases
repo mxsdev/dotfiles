@@ -12,3 +12,18 @@ alias nv='nvim'
 alias lg='lazygit'
 
 alias act='act --container-architecture linux/amd64'
+
+alias gcam='git add -A && git commit -am'
+alias gca='git add -A && git commit -a'
+gcampu() { git add -A && git commit -am $1 && git push upstream }
+alias gcapu='git add -A && git commit -a && git push upstream'
+alias gpu='git push upstream'
+alias gpo='git push origin'
+alias ghprcw='gh pr create --web'
+
+
+gcbme() { git checkout -b mxsdev/$1 };
+gcme() { git checkout mxsdev/$1 };
+alias gc='git checkout'
+
+export PATH="$PATH:/Users/maxstoumen/.dotnet/tools"

@@ -1,0 +1,80 @@
+[env]
+TERM = "alacritty"
+
+[terminal]
+shell = { program = "/bin/zsh", args = ["-l"] }
+
+[font]
+
+normal.family = "FiraCode Nerd Font Mono"
+bold.family = "FiraCode Nerd Font"
+italic.family = "FiraCode Nerd Font"
+bold_italic.family = "FiraCode Nerd Font"
+
+normal.style = "Regular"
+bold.style = "Bold"
+
+size = 14.0
+
+[[keyboard.bindings]]
+chars = "\u001B[13;2u"
+key = "Return"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[13;5u"
+key = "Return"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u0017"
+key = "Back"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0017"
+key = "Back"
+mods = "Control"
+
+[window]
+option_as_alt = "Both"
+
+padding.y = 10
+padding.x = 10
+dynamic_padding = true
+
+opacity = 0.85
+blur = true
+decorations = "buttonless"
+
+[colors]
+primary.background = "#22262a"
+primary.foreground = "#d0c6ad"
+
+selection.text = "#2e343a"
+cursor.cursor = "#d0c6ad"
+cursor.text = "#d0c6ad"
+
+transparent_background_colors = false
+
+draw_bold_text_with_bright_colors = false
+
+normal.black = "#363e43"
+normal.red = "#d88382"
+normal.green = "#abbf86"
+normal.yellow = "#d5bd86"
+normal.blue = "#8cb9b2"
+normal.magenta = "#cc9bb4"
+normal.cyan = "#90be95"
+normal.white = "#d0c6ad"
+
+bright.black = "#879189"
+bright.red = "#d88382"
+bright.green = "#abbf86"
+bright.yellow = "#d5bd86"
+bright.blue = "#8cb9b2"
+bright.magenta = "#cc9bb4"
+bright.cyan = "#90be95"
+bright.white = "#d0c6ad"
+
+dim.black = "#ff33cc"
