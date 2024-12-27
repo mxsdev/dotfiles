@@ -20,10 +20,12 @@ alias gcapu='git add -A && git commit -a && git push upstream'
 alias gpu='git push upstream'
 alias gpo='git push origin'
 alias ghprcw='gh pr create --web'
-
+alias gpuf='git push upstream --force-with-lease'
+alias gcm='git commit -m'
+alias gcb='git checkout -b'
+alias gc='git checkout'
 
 gcbme() { git checkout -b mxsdev/$1 };
 gcme() { git checkout mxsdev/$1 };
-alias gc='git checkout'
 
 export PATH="$PATH:/Users/maxstoumen/.dotnet/tools"

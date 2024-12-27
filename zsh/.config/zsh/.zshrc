@@ -85,7 +85,7 @@ bindkey "^h" backward-char
 [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
+# [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
 
 # Edit line in vim with ctrl+e
 # autoload edit-command-line; zle -N edit-command-line
@@ -102,3 +102,24 @@ eval "$(fnm env --use-on-cd)"
 # # pnpm end
 
 export GPG_TTY=$(tty)
+
+# #compdef gt
+# ###-begin-gt-completions-###
+# #
+# # yargs command completion script
+# #
+# # Installation: gt completion >> ~/.zshrc
+# #    or gt completion >> ~/.zprofile on OSX.
+# #
+# _gt_yargs_completions()
+# {
+#   local reply
+#   local si=$IFS
+#   IFS=$'
+# ' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
+#   IFS=$si
+#   _describe 'values' reply
+# }
+# compdef _gt_yargs_completions gt
+# ###-end-gt-completions-###
+
