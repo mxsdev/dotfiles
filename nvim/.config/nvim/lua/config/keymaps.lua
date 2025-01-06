@@ -26,9 +26,11 @@ local defaults = {
 
     -- cursor navigation
     ["<C-h>"] = "<left>",
-    -- ["<C-l>"] = "<right>",
+    ["<C-l>"] = "<right>",
     -- ["<C-j>"] = "<down>",
     -- ["<C-k>"] = "<up>",
+
+    ["<S-Enter>"] = "<ESC>O",
   },
 
   normal_mode = {
@@ -44,7 +46,8 @@ local defaults = {
 
     ["<leader>w"] = { "<cmd>w<cr><esc>", { desc = "Save File" } },
 
-    ["<leader>T"] = { "<cmd>e ~/.config/alacritty/alacritty.toml<cr>", { desc = "Configure Alacritty" } },
+    ["<leader>Ta"] = { "<cmd>e ~/.config/alacritty/alacritty.toml<cr>", { desc = "Configure Alacritty" } },
+    ["<leader>Tg"] = { "<cmd>e ~/.config/ghostty/config<cr>", { desc = "Configure Ghostty" } },
 
     ["<leader>L"] = {
       ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})<cr>",

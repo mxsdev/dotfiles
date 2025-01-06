@@ -1,0 +1,72 @@
+# Keybindings
+keybind = option+backspace=text:\x17
+keybind = control+backspace=text:\x17
+keybind = shift+enter=text:\x1B[13;2u
+
+# Font
+font-family = "FiraCode Nerd Font Mono"
+font-family-bold = "FiraCode Nerd Font Mono"
+font-family-italic = "FiraCode Nerd Font Mono"
+font-family-bold-italic = "FiraCode Nerd Font Mono"
+
+font-style = "Regular"
+font-style-bold = "Bold"
+
+font-size = 14
+
+font-thicken = true
+
+# Window
+
+# background-opacity = 0.88
+# background-blur-radius = 55
+
+background-opacity = 0.78
+background-blur-radius = 20
+
+# background-opacity = 0.85
+# background-blur-radius = 10
+
+
+macos-option-as-alt = true
+
+macos-titlebar-style = hidden
+window-padding-x = 10
+window-padding-y = 11
+
+# Cursor
+cursor-style = "block"
+cursor-style-blink = false
+adjust-cursor-thickness = 1
+
+# Colors
+background = "#22262a"
+foreground = "#d0c6ad"
+
+selection-foreground = "#2e343a"
+cursor-color = "#d0c6ad"
+cursor-text = "#d0c6ad"
+
+palette = 0=#363e43
+palette = 1=#d88382
+palette = 2=#abbf86
+palette = 3=#d5bd86
+palette = 4=#8cb9b2
+palette = 5=#cc9bb4
+palette = 6=#90be95
+palette = 7=#d0c6ad
+
+palette = 8=#879189
+palette = 9=#d88382
+palette = 10=#abbf86
+palette = 11=#d5bd86
+palette = 12=#8cb9b2
+palette = 13=#cc9bb4
+palette = 14=#90be95
+palette = 15=#d0c6ad
+
+# transparent_background_colors = false
+#
+# draw_bold_text_with_bright_colors = false
+#
+
