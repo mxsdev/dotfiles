@@ -41,10 +41,12 @@ local function override_everforest_colors()
     "@keyword.import",
     "@function",
     "@function.call",
+    "@function.method.call",
     -- "@lsp.type.method",
     "@variable.builtin",
     "@keyword.function",
     "@keyword.modifier",
+    "@constructor.typescript",
   }) do
     local keyword = vim.api.nvim_get_hl(0, { name = hl_name, link = false })
     vim.api.nvim_set_hl(0, hl_name, {
