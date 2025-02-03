@@ -6,3 +6,4 @@ vim.g.ai_cmp = true
 
 vim.opt.hidden = true
 vim.opt.wrap = true
+-- vim.g.root_spec = { "cwd" }

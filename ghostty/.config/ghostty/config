@@ -71,3 +71,5 @@ palette = 15=#d0c6ad
 # draw_bold_text_with_bright_colors = false
 #
 
+# macos-icon = custom-style
+# macos-icon-frame = beige

@@ -4,6 +4,16 @@ return {
   {
     "ibhagwan/fzf-lua",
     keys = function(_, orig_keys)
+      table.insert(
+        orig_keys,
+        { "<leader>sd", "<cmd>FzfLua diagnostics_document sort=true<cr>", desc = "Document Diagnostics" }
+      )
+
+      table.insert(
+        orig_keys,
+        { "<leader>sD", "<cmd>FzfLua diagnostics_workspace sort=true<cr>", desc = "Workspace Diagnostics" }
+      )
+
       return remap_keys(orig_keys, {
         ["<leader>ff"] = "<leader>f",
         ["<leader>fF"] = "<leader>sf",
